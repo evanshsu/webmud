@@ -1,0 +1,56 @@
+.default {
+	font-family:  'Courier New', STHeiti, 'Microsoft JhengHei', Courier, monospace;
+	width: 100%;
+}
+
+@media (max-width: 480px) { 
+.default {
+	font-size: 12px;
+}
+}
+
+@media (min-width: 1200px) { 
+.default {
+	font-size: 18px;
+}
+}
+
+.shortcuts {
+	display: none;
+}
+
+#show {
+	overflow: auto;
+	padding: 5px;
+	height: 70%;
+	background-color: #000000;
+	color: #ffffff;
+	text-align: left;
+}
+#error {
+	color: #aa0000;
+	text-align: left;
+}
+#history {
+	color: #333333;
+	text-align: left;
+}
+
+.lightyellow {color: #FEFE00}
+.lightred {color: #FF0000}
+.lightpurple {color: #DC00DC}
+.lightgreen {color: #00FF00}
+.lightblack {color: #222222}
+.lightblue {color: #0000FF}
+.lightcyab {color: #00FFFF}
+.lightwhile {color: #FFFFFF}
+
+.yellow {color: #FEFE00}
+.red {color: #FF0000}
+.purple {color: #DC00DC}
+.green {color: #00FF00}
+.black {color: #222222}
+.blue {color: #0000FF}
+.cyab {color: #00FFFF}
+.while {color: #FFFFFF}
+
