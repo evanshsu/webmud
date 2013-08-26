@@ -12,9 +12,12 @@ Play MUD in Browser with Your Own Proxy.
 
 ## Customize for other MUDs:
   1. open src/mud.properties in webmud.war
-  2. add new config for new MUD, ex: doom
+  2. add new config for new MUD, ex: doom 
+
 ```js
   doom.url=140.126.11.213
   doom.port=4000
   doom.encoding=MS950
 ```
+  3. modfiy runkk.sh with replace "kk" by "doom"
+  
