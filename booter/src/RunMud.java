@@ -16,14 +16,25 @@ public class RunMud {
 			server.setThreadPool(threadPool);
 	
 			Connector connector = new SelectChannelConnector();
-			connector.setPort(Integer.parseInt(args[2]));
+			connector.setPort(Integer.parseInt(args[1]));
 			server.setConnectors(new Connector[] { connector });
 	
 			WebAppContext context = new WebAppContext();
-			context.setContextPath("/" + args[1]);
+			context.setContextPath("/" + args[2]);
 			context.setWar(args[0]);
 	
 			server.addHandler(context);
+			
+			if (args.length >= 4) {
+				for(int i = 3; i < args.length; i++) {
+					context = new WebAppContext();
+					context.setContextPath("/" + args[i]);
+					context.setWar(args[0]);
+				}
+			}
+			
+			server.addHandler(context);
+			
 			server.setStopAtShutdown(true);
 			server.setSendServerVersion(true);
 	
@@ -31,7 +42,7 @@ public class RunMud {
 			server.join();
 		}
 		catch (Exception e) {
-			System.out.println("USAGE: java RunMud [war file] [app name] [port]");
+			System.out.println("USAGE: java RunMud [war file] [port] [app name ... ] ");
 		}
 	}
 }

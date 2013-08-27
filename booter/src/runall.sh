@@ -1,0 +1,1 @@
+java -cp .:../lib/ant-1.6.5.jar:../lib/core-3.1.1.jar:../lib/jetty-6.1.26.jar:../lib/jetty-util-6.1.26.jar:../lib/jsp-2.1-glassfish-2.1.v20091210.jar:../lib/jsp-2.1-jetty-6.1.26.jar:../lib/jsp-api-2.1-glassfish-2.1.v20091210.jar:../lib/servlet-api-2.5-20081211.jar RunMud webmud.war 80 kk doom
