@@ -52,7 +52,7 @@ $(document).ready(function(){
 				cmds.pop();
 			}
 			$("#history").html(cmds.join("<br />"));
-			//$("#typein").focus().select();
+			$("#typein").focus().select();
 			$.ajax({
 				type: "POST",
 				url: "./send.jsp",
@@ -69,7 +69,7 @@ $(document).ready(function(){
 				}
 			});
 			draw();
-			$("#typein").val("");
+//			$("#typein").val("");
 		}		
 	});
 	$(".shortcuts").click(function(e){
