@@ -49,9 +49,9 @@ public class Connection {
 		}
 	}
 
-	public void process(char ch) {
+	public void process(char ch, boolean isCooked) {
 		if(controller != null)
-			controller.process(ch);
+			controller.process(ch, isCooked);
 	}
 	
 	public boolean start() throws Exception {		

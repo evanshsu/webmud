@@ -49,7 +49,7 @@ public class InputHandler extends Thread{
 					}
 					
 					if(!isSkip) {
-						conn.process((char)ch);
+						conn.process((char)ch, false);
 					}
 					
 					if(ch == 109) {
@@ -75,6 +75,8 @@ public class InputHandler extends Thread{
 	private boolean isInSpan = false;
 	
 	public void handleColor(String buf) {
+		buf = buf.replaceAll("<", "&lt");
+		
 		String color = "<spanXXXSPACEXXXclass='";
 		
 		if(buf.indexOf("[1m") > 0 || buf.indexOf("[0m") > 0 || buf.indexOf("37") > 0) {
@@ -111,7 +113,7 @@ public class InputHandler extends Thread{
 		}
 		
 		for(int i = 0; i < color.length(); i++) {
-			conn.process(color.charAt(i));
+			conn.process(color.charAt(i), true);
 		}
 	}	
 }

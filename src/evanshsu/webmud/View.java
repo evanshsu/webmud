@@ -13,8 +13,17 @@ public class View {
 	private List<Integer> userActionsOrder = new ArrayList<Integer>();
 	private StringBuffer buffer = new StringBuffer();
 	
-	public void add(char ch) {
-		buffer.append(ch);
+	public void add(char ch, boolean isCooked) {
+		if(isCooked) {
+			buffer.append(ch);
+		}
+		else {
+			if(ch == '<')
+				buffer.append("&lt");
+			else
+				buffer.append(ch);
+		}
+		
 		if(ch == 10) {
 			mudMsgs.add(buffer.toString());
 			buffer = new StringBuffer();

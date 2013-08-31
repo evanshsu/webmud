@@ -3,24 +3,16 @@
 <head>
 <title>WEBMUD</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" media="screen" href="css/bootstrap.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
 	<div id="show" class="well terminal default"></div>
-	<input type="text" id="typein" class="default"></input>
-	<div class="btn-group">
-		<button class="btn btn-primary shortcuts" type="button">Recall</button>
-		<button class="btn btn-primary shortcuts" type="button">W</button>
-		<button class="btn btn-primary shortcuts" type="button">N</button>
-		<button class="btn btn-primary shortcuts" type="button">S</button>
-		<button class="btn btn-primary shortcuts" type="button">E</button>
-		<button class="btn btn-primary shortcuts" type="button">U</button>
-		<button class="btn btn-primary shortcuts" type="button">D</button>
-	</div>
-	<button class="btn btn-success shortcuts quick" type="button">L</button>	
+	<input type="text" id="typein" class="default" autocorrect="off" autocapitalize="off"></input>
+	<div id="buttons">
 	<button class="btn btn-danger" onclick="window.location.href='./logout.jsp';">Reset</button>
+	<button class="btn btn-blue btn-timer">Timer</button>
+	</div>
 	<div id="error" class="default"></div>
 	<div id="history" class="default"></div>
 	<script src="js/jquery-1.5.2.min.js"></script>

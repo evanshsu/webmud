@@ -16,8 +16,9 @@ public class Controller {
 	private List<Trigger> triggers = new ArrayList<Trigger>();
 	private View view;
 	
-	public void process(char ch) {
-		view.add(ch);
+	public void process(char ch, boolean isCooked) {
+		
+		view.add(ch, isCooked);
 		bufferMsg.append(ch);
 		
 		for(Trigger trigger:triggers) {

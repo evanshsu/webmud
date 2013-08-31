@@ -1,6 +1,8 @@
 .default {
 	font-family:  'Courier New', STHeiti, 'Microsoft JhengHei', Courier, monospace;
 	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 @media (max-width: 480px) { 
@@ -13,6 +15,50 @@
 .default {
 	font-size: 18px;
 }
+}
+.btn {
+	height: 30px;
+	width: 73px;
+	border-bottom-color: rgba(0, 0, 0, 0.247059);
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: separate;
+	border-image-outset: 0px;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgba(0, 0, 0, 0.0980392);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgba(0, 0, 0, 0.0980392);
+	border-right-style: solid;
+	border-right-width: 1px;
+	/* border-top-color: rgba(0, 0, 0, 0.0980392);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	 */color: rgb(255, 255, 255);
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 10px;
+}
+
+.btn-danger {
+	background-color: rgb(218, 79, 73);
+	background-image: linear-gradient(rgb(238, 95, 91), rgb(189, 54, 47));
+}
+.btn-blue {
+	background-color: #006dcc;
+	background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+}
+#buttons {
+	padding-top: 0px;
+	margin-top: 0px;
 }
 
 .shortcuts {
@@ -34,6 +80,9 @@
 #history {
 	color: #333333;
 	text-align: left;
+}
+body {
+	margin: 0 0 0 0;
 }
 
 .lightyellow {color: #FEFE00}

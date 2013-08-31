@@ -44,24 +44,15 @@ $(document).ready(function(){
 			}
 		});
 	}
-	var lastcmd = "";
 	$("#typein").keypress(function(e){
 		if(e.keyCode == 13 ){
-			if($("#typein").val() == "") {
-				$("#typein").val(lastcmd);
-			}
 			
 			cmds.unshift($("#typein").val())
 			while(cmds.length > 10) {
 				cmds.pop();
 			}
 			$("#history").html(cmds.join("<br />"));
-			$("#typein").focus().select();
-			
-			if($("#typein").val() == "quit") {
-				setInterval(logout,3000);
-			}
-			
+			//$("#typein").focus().select();
 			$.ajax({
 				type: "POST",
 				url: "./send.jsp",
@@ -77,13 +68,11 @@ $(document).ready(function(){
 					$("#error").html("ERROR");
 				}
 			});
-			lastcmd = $("#typein").val();
-			$("#typein").val("");
 			draw();
+			$("#typein").val("");
 		}		
 	});
 	$(".shortcuts").click(function(e){
-		
 		$.ajax({
 			type: "POST",
 			url: "./send.jsp",
@@ -100,11 +89,35 @@ $(document).ready(function(){
 			}
 		});
 		draw();
-				
 	});
 	$("#typein").focus().select();
 	function logout() {
 		clearInterval(sid);
 		window.location.href="./logout.jsp";
 	}
+	var isStarted = false;
+	$(".btn-timer").click(function(e){
+		if(!isStarted) {
+			isStarted = true;
+			$(this).text("Started");
+			$(".btn-timer").removeClass("btn-timer").removeClass("btn-blue").css("background-color", "#999999");
+			setInterval(function(){
+				$.ajax({
+					type: "POST",
+					url: "./send.jsp",
+					data: "msg=%20",
+					async: true,
+					dataType: "text",
+					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+					compelete: function(){
+					},
+					success: function(response){
+					},
+					error: function() {
+						$("#error").html("ERROR");
+					}
+				});
+			}, 10 * 60 * 1000);
+		}
+	});
 });
