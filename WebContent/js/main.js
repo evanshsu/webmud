@@ -44,6 +44,12 @@ $(document).ready(function(){
 			}
 		});
 	}
+	$("#typein").bind('click', function(){
+		$("#show").animate({height: "90%"}, 300);
+	});
+	$("#typein").bind('blur', function(){
+		$("#show").animate({height: "70%"}, 300);
+	});
 	$("#typein").keypress(function(e){
 		if(e.keyCode == 13 ){
 			
