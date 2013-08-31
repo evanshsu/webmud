@@ -3,6 +3,8 @@ package evanshsu.webmud.telnet;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import evanshsu.webmud.App;
+
 /**
  * @author Evans Hsu (evanshsu@gmail.com)
  */
@@ -32,7 +34,7 @@ public class InputHandler extends Thread{
 			if(!isEnable)
 				return;
 			
-			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "MS950"));
+			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), App.getEncoding()));
 			boolean isSkip = false;
 			while(isEnable) {
 				int ch = -1;
