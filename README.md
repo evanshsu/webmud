@@ -24,5 +24,5 @@ Play MUD in Browser with Your Own Proxy.
 
   * modfiy runkk.sh with replace "kk" by "doom"
   
-## Timer
-  Will send msg to MUD server per 10 mins to avoid timeout.
+## Functionality
+  * Timer: will send msg to MUD server per 10 mins to avoid timeout.
