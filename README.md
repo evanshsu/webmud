@@ -3,6 +3,8 @@ WebMud
 Play MUD in Browser with Your Own Proxy.
 
 ## Sample Site: http://mud.twbbs.org/kk
+![sample1](figure/figure1.gng)
+![sample2](figure/figure2.gng)
 
 ## Install on your server:
   1. Download Source Code Zip and Unzip
