@@ -22,7 +22,6 @@ public class RunMud {
 			WebAppContext context = new WebAppContext();
 			context.setContextPath("/" + args[2]);
 			context.setWar(args[0]);
-	
 			server.addHandler(context);
 			
 			if (args.length >= 4) {
@@ -30,9 +29,13 @@ public class RunMud {
 					context = new WebAppContext();
 					context.setContextPath("/" + args[i]);
 					context.setWar(args[0]);
+					server.addHandler(context);
 				}
 			}
 			
+			context = new WebAppContext();
+			context.setContextPath("/");
+			context.setWar(args[0]);
 			server.addHandler(context);
 			
 			server.setStopAtShutdown(true);

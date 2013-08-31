@@ -22,6 +22,9 @@ public class App implements ServletContextListener {
 
 	public void contextInitialized(ServletContextEvent event) {
 		URI = event.getServletContext().getContextPath().replaceAll("/", "");
+		if(URI.equals("")) {
+			URI = "webmud";
+		}
 	}
 	
 	public static String getUrl() {
