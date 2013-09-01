@@ -8,11 +8,12 @@ $(document).ready(function(){
 			type: "POST",
 			url: "./msg.jsp",
 			data: "",
-			async: true,
+			async: false,
 			compelete: function(){
 			},
 			success: function(response){
-				if(response != "") {
+				if($.trim("" + response) != "") {
+					
 					$("#error").html("");
 					
 					var strs = response.split("\n");
@@ -23,42 +24,29 @@ $(document).ready(function(){
 
 					var all = msgs.join("\n");
 					$("#show").html(all);
-	
 					$("#show").scrollTop($("#show").attr("scrollHeight"));
 
 					while(msgs.length > maxline) {
 						msgs.shift();
-					}
-					var from = all.lastIndexOf("(");
-					var to = all.lastIndexOf(")");
-					if (from < to && to - from <= 30 && from > 0 && to > 0) {
-						var found = all.substring(from + 1, from + 2);
-						$(".quick").text("k " + found);
 					}
 				}
 			},
 			error: function() {
 				$("#error").html("ERROR");
 				clearInterval(sid);
-//				window.location.href="./logout.jsp";
 			}
 		});
 	}
-	$("#typein").bind('click', function(){
-		$("#show").animate({height: "90%"}, 300);
-	});
-	$("#typein").bind('blur', function(){
-		$("#show").animate({height: "70%"}, 300);
-	});
 	$("#typein").keypress(function(e){
 		if(e.keyCode == 13 ){
+			msgs.push("<span class='lightyellow'>" + $("#typein").val() + "</span><br>\n");
 			
-			cmds.unshift($("#typein").val())
+			cmds.unshift($("#typein").val());
 			while(cmds.length > 10) {
 				cmds.pop();
 			}
 			$("#history").html(cmds.join("<br />"));
-			//$("#typein").focus().select();
+
 			$.ajax({
 				type: "POST",
 				url: "./send.jsp",

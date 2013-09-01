@@ -61,13 +61,13 @@
 	margin-top: 0px;
 }
 
-.shortcuts {
-	display: none;
+#typein {
+	height: 30px;
 }
 #show { 
 	overflow: auto;
 	padding: 5px;
-	height: 70%;
+	height: 90%;
 	background-color: #000000;
 	color: #ffffff;
 	text-align: left;
@@ -79,9 +79,11 @@
 #history {
 	color: #333333;
 	text-align: left;
+	display: none;
 }
 body {
 	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .lightyellow {color: #FEFE00}
