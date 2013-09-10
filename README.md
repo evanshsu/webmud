@@ -2,9 +2,11 @@ WebMud
 ----------------------
 Play MUD in Browser with Your Own Proxy.
 
-## Sample Site: http://mud.twbbs.org/kk
+## Sample Site (King of Kings): http://mud.twbbs.org/kk
 ![sample1](figure/figure1.png)
 ![sample2](figure/figure2.png)
+
+## Sample Site (Doom): http://mud.twbbs.org/doom
 
 ## Install on your server:
   1. Download Source Code Zip and Unzip
@@ -26,3 +28,5 @@ Play MUD in Browser with Your Own Proxy.
   
 ## Timer
   Will send msg to MUD server per 10 mins to avoid timeout.
+
+nk0ew0se3
